@@ -25,12 +25,11 @@ export default {};
 header {
     background: #313132;
     nav {
-        width: 70%;
+        width: 68%;
         margin: 0 auto;
         @include flex(space-between, center, none);
         li {
             list-style-type: none;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
             color: $white;
             font-size: $font-sm;
             opacity: 0.8;
