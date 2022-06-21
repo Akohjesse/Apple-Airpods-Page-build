@@ -4,3 +4,17 @@
     align-items: $ai;
     gap: $gap;
 }
+
+@mixin txtheader($color) {
+    font-size: 120px;
+    color: $color;
+    line-height: 0.8;
+    font-weight: 600;
+    letter-spacing: -0.0018em;
+}
+
+@mixin flexcol($gap) {
+    flex-direction: column;
+    display: flex;
+    gap: $gap;
+}
