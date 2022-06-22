@@ -39,7 +39,7 @@ import videoComp from "./components/airpods3.vue";
         </div>
     </div>
     <div class="child_wrap airpods-section">
-        <videoComp />
+        <airpods-3/>
     </div>
 </template>
 
