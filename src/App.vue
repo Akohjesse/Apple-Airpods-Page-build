@@ -1,6 +1,6 @@
 <script setup>
 import Header from "./components/header.vue";
-import videoComp from "./components/airpods3.vue";
+import airpods3 from "./components/airpods3.vue";
 </script>
 
 <template>
