@@ -41,3 +41,13 @@ p {
 .purchase-gen {
     @include flex(center, center, 0 1rem);
 }
+.txt_content {
+    position: absolute;
+    text-align: center;
+}
+.col-blue{
+    color: $blue;
+}
+.col-white{
+    color: $white;
+}

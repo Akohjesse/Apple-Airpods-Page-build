@@ -18,3 +18,9 @@
     display: flex;
     gap: $gap;
 }
+@mixin label_btn(){
+    padding: 0.8rem;
+     border-radius: 1.5rem;
+     width: 4.8rem;
+     @content;
+}

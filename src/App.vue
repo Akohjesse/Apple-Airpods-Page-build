@@ -80,17 +80,27 @@ import airpods3 from "./components/airpods3.vue";
     .airpods-item {
         border-radius: 1.5rem;
         padding: 2.5rem 0;
+        position: relative;
     }
     .airpods-pro {
         background: black;
         width: 100%;
         .image-backdrop {
-            @include flex(center, center, 0 3rem);
+            @include flex(center, center, 0 3.5rem);
             .img {
                 width: 31%;
                 img {
                     width: 100%;
                 }
+            }
+        }
+        .txt_content {
+            top: 37%;
+            left: 28%;
+            h1 {
+                @include txtheader($white);
+                    letter-spacing: -0.0018em;
+                text-shadow: 0 2px 50px rgb(0 0 0 / 48%);
             }
         }
     }

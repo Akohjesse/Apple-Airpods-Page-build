@@ -13,8 +13,8 @@
                 <p class="subhead">3rd generation</p>
             </div>
             <div class="purchase-gen">
-                <div class="label">Buy</div>
-                <p>Learn more</p>
+                <div class="label col-white">Buy</div>
+                <p class="col-blue">Learn more</p>
             </div>
         </div>
     </div>
@@ -39,11 +39,9 @@ onMounted(() => {
         border-radius: 2rem;
     }
     .txt_content {
-        position: absolute;
+        @include flexcol(8rem 0);
         top: 35%;
         left: 35%;
-        text-align: center;
-        @include flexcol(8rem 0);
         .airpod-gen {
             @include flexcol(1.5rem 0);
             h1 {
@@ -52,14 +50,9 @@ onMounted(() => {
         }
         .purchase-gen {
             .label {
-                padding: 0.8rem;
-                border-radius: 1.5rem;
-                width: 4.8rem;
+              @include label_btn(){
                 background: $blue;
-                color: $white;
-            }
-            p {
-                color: $blue;
+              }
             }
         }
     }
