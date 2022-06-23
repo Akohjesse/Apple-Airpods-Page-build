@@ -6,7 +6,7 @@
             autoplay
             src="https://www.apple.com/105/media/us/airpods/2021/625e09e3-e26e-49ed-a5ee-6e4eda5d275f/anim/supercut/large_2x.mp4"
         ></video>
-        <div class="txt_content">
+        <div class="txt_content abs ta_center">
             <div class="airpod-gen">
                 <div class="label-new">New</div>
                 <h1>AirPods</h1>
