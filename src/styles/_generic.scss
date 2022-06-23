@@ -39,15 +39,15 @@ p {
     margin: 0 auto;
 }
 .purchase-gen {
-    @include flex(center, center, 0 1rem);
+    @include flex(center, center, 0 1.3rem);
 }
 .txt_content {
     position: absolute;
     text-align: center;
 }
-.col-blue{
+.col-blue {
     color: $blue;
 }
-.col-white{
+.col-white {
     color: $white;
 }

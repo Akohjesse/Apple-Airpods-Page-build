@@ -53,7 +53,18 @@ import airpods3 from "./components/airpods3.vue";
                 <h1>AirPods Pro</h1>
                 <div class="purchase-gen">
                     <div class="label">Buy</div>
-                    <p>Learn more</p>
+                    <p class="col-white">Learn more</p>
+                </div>
+            </div>
+        </div>
+        <div class="airpods-max airpods-item">
+            <div>
+                <div class="img">
+                    <img src="./assets/airpods_max_large_2x.png" alt="" />
+                </div>
+                <div class="purchase-gen">
+                    <div class="label col-white">Buy</div>
+                    <p class="col-blue">Learn more</p>
                 </div>
             </div>
         </div>
@@ -97,10 +108,16 @@ import airpods3 from "./components/airpods3.vue";
         .txt_content {
             top: 37%;
             left: 28%;
+            @include flexcol(13rem 0);
             h1 {
                 @include txtheader($white);
-                    letter-spacing: -0.0018em;
+                letter-spacing: -0.0018em;
                 text-shadow: 0 2px 50px rgb(0 0 0 / 48%);
+            }
+            .label {
+                @include label_btn() {
+                    background-color: $white;
+                }
             }
         }
     }

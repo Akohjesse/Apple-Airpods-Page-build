@@ -24,7 +24,7 @@
 import { onMounted } from "@vue/runtime-core";
 
 onMounted(() => {
-    window.addEventListener("mouseover", () => {
+    window.addEventListener("DOMContentLoaded", () => {
         document.querySelector("#myVid").play();
     });
 });
@@ -50,9 +50,9 @@ onMounted(() => {
         }
         .purchase-gen {
             .label {
-              @include label_btn(){
-                background: $blue;
-              }
+                @include label_btn() {
+                    background: $blue;
+                }
             }
         }
     }
