@@ -39,7 +39,24 @@ import airpods3 from "./components/airpods3.vue";
         </div>
     </div>
     <div class="child_wrap airpods-section">
-        <airpods-3/>
+        <airpods-3 />
+        <div class="airpods-pro airpods-item">
+            <div class="image-backdrop">
+                <div class="img">
+                    <img src="./assets/airpods_pro_left_large.png" alt="" />
+                </div>
+                <div class="img">
+                    <img src="./assets/airpods_pro_right_2x.png" alt="" />
+                </div>
+            </div>
+            <div class="txt_content">
+                <h1>AirPods Pro</h1>
+                <div class="purchase-gen">
+                    <div class="label">Buy</div>
+                    <p>Learn more</p>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -59,5 +76,23 @@ import airpods3 from "./components/airpods3.vue";
 }
 .airpods-section {
     padding: 2rem 0;
+    @include flexcol(2rem 0);
+    .airpods-item {
+        border-radius: 1.5rem;
+        padding: 2.5rem 0;
+    }
+    .airpods-pro {
+        background: black;
+        width: 100%;
+        .image-backdrop {
+            @include flex(center, center, 0 3rem);
+            .img {
+                width: 31%;
+                img {
+                    width: 100%;
+                }
+            }
+        }
+    }
 }
 </style>

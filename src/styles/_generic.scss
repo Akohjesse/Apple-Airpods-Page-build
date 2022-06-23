@@ -12,6 +12,9 @@ body {
 p {
     font-size: 21px;
 }
+.flex {
+    display: flex;
+}
 .new {
     color: #bf4800 !important;
     font-size: 10px !important;
@@ -32,7 +35,7 @@ p {
     font-size: 22px;
 }
 .child_wrap {
-    width: 95%;
+    width: 96%;
     margin: 0 auto;
 }
 .purchase-gen {

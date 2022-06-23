@@ -1,5 +1,5 @@
 <template>
-    <div class="video_block">
+    <div class="video_block airpods-3">
         <video
             id="myVid"
             loop
