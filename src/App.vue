@@ -121,23 +121,23 @@ import airpods3 from "./components/airpods3.vue";
             }
         }
     }
-    .airpods-max{
+    .airpods-max {
         background: white;
         background-image: url("./assets/airpods_max_logo_2x.jpeg");
         background-repeat: no-repeat;
-        background-size:80%;
-        background-position: center;
-        >div{
+        background-size: 80%;
+        background-position: center 45%;
+        > div {
             @include flexcol(3rem);
             justify-content: center;
             align-items: center;
-            .img{
+            .img {
                 width: 39%;
-                img{
+                img {
                     width: 100%;
                 }
             }
-             .label {
+            .label {
                 @include label_btn() {
                     background: $blue;
                 }
