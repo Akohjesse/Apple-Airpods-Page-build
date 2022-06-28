@@ -68,6 +68,19 @@ import airpods3 from "./components/airpods3.vue";
                 </div>
             </div>
         </div>
+        <div class="airpods-2 airpods-item">
+            <div class="txt_content abs ta_center">
+                <div class="airpod-gen">
+                    <h1>AirPods</h1>
+                    <br />
+                    <p class="subhead">2nd generation</p>
+                </div>
+                <div class="purchase-gen">
+                    <div class="label col-white">Buy</div>
+                    <p class="col-blue">Learn more</p>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -137,6 +150,24 @@ import airpods3 from "./components/airpods3.vue";
                     width: 100%;
                 }
             }
+            .label {
+                @include label_btn() {
+                    background: $blue;
+                }
+            }
+        }
+    }
+    .airpods-2 {
+        background: white;
+        .txt_content {
+            top: 37%;
+            left: 28%;
+            @include flexcol(8rem 0);
+            h1 {
+                @include txtheader($black-txt);
+                letter-spacing: -0.0018em;
+            }
+
             .label {
                 @include label_btn() {
                     background: $blue;

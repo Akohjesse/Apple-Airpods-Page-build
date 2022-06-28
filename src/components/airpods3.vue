@@ -34,6 +34,7 @@ onMounted(() => {
 .video_block {
     width: 100%;
     position: relative;
+    border-radius: 2rem;
     video {
         width: 100%;
         border-radius: 2rem;
