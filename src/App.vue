@@ -69,6 +69,14 @@ import airpods3 from "./components/airpods3.vue";
             </div>
         </div>
         <div class="airpods-2 airpods-item">
+            <div class="image-backdrop">
+                <div class="img">
+                    <img src="./assets/airpods_2_left_large.png" alt="">
+                </div>
+                <div class="img">
+                    <img src="./assets/airpods_2_right.png" alt="">
+                </div>
+            </div>
             <div class="txt_content abs ta_center">
                 <div class="airpod-gen">
                     <h1>AirPods</h1>
