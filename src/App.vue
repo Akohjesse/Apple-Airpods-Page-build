@@ -118,6 +118,28 @@ import airpods3 from "./components/airpods3.vue";
             Which AirPods are <br />
             right for you?
         </h1>
+        <div class="compare-section">
+            <div>
+                <div class="img">
+                    <img src="./assets/a2.png" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="img">
+                    <img src="./assets/a3.png" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="img">
+                    <img src="./assets/ap.png" alt="">
+                </div>
+            </div>
+            <div>
+                <div class="img">
+                    <img src="./assets/am.png" alt="">
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -265,5 +287,6 @@ import airpods3 from "./components/airpods3.vue";
 }
 .apple-pods-compare {
     padding: 7rem 0px;
+    @include flexcol(4rem);
 }
 </style>
