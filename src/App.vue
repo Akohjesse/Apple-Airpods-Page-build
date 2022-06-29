@@ -91,7 +91,7 @@ import airpods3 from "./components/airpods3.vue";
         </div>
     </div>
     <div class="apple-pods-pros ta_center">
-        <h1>
+        <h1 class="header-sub">
             A magical connection to <br />
             your devices.
         </h1>
@@ -100,27 +100,24 @@ import airpods3 from "./components/airpods3.vue";
                 <div class="img">
                     <img src="./assets/tile_1.jpeg" alt="" />
                 </div>
-                <div class="tile-header">
-                    <h3>One-tap setup</h3>
-                </div>
             </div>
             <div class="tile-connection">
                 <div class="img">
                     <img src="./assets/tile_2.jpeg" alt="" />
-                </div>
-                <div class="tile-header">
-                 <h3>One-tap setup</h3>
                 </div>
             </div>
             <div class="tile-connection">
                 <div class="img">
                     <img src="./assets/tile_3.jpeg" alt="" />
                 </div>
-                <div class="tile-header">
- <h3>Audio Sharing</h3>
-                </div>
             </div>
         </div>
+    </div>
+    <div class="apple-pods-compare ta_center">
+        <h1 class="header-sub">
+            Which AirPods are <br />
+            right for you?
+        </h1>
     </div>
 </template>
 
@@ -243,12 +240,6 @@ import airpods3 from "./components/airpods3.vue";
 .apple-pods-pros {
     padding: 7rem 0px;
     @include flexcol(3rem);
-    h1 {
-        font-size: 62px;
-        color: $black-txt;
-        font-weight: 700;
-        line-height: 4rem;
-    }
     .section-connection {
         @include flex(center, center, 0 1.5em);
         .tile-connection {
@@ -256,26 +247,23 @@ import airpods3 from "./components/airpods3.vue";
             border-radius: 25px;
             background: white;
             height: 484px;
-             @include flex(center, center,0 );
-             &:nth-child(1){
+            @include flex(center, center, 0);
+            &:nth-child(1) {
                 display: block;
-                .img{
-                     margin-left: 20px !important;
+                .img {
+                    margin-left: 20px !important;
                 }
             }
-           .img{
-            width: 90%;
-             img {
-                width: 100%;
+            .img {
+                width: 90%;
+                img {
+                    width: 100%;
+                }
             }
-           }
-           .tile-header{
-            display: none;
-            h3{
-                font-size: 2em;
-            }
-           }
         }
     }
+}
+.apple-pods-compare {
+    padding: 7rem 0px;
 }
 </style>
