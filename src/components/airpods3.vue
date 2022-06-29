@@ -3,7 +3,6 @@
         <video id="myVid" poster="../assets/airpods_pro_right_2x.png" loop autoplay muted>
             <source
                 type="video/mp4"
-                
                 src="https://www.apple.com/105/media/us/airpods/2021/625e09e3-e26e-49ed-a5ee-6e4eda5d275f/anim/supercut/large_2x.mp4"
             />
         </video>

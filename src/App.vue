@@ -92,18 +92,25 @@ import airpods3 from "./components/airpods3.vue";
     </div>
     <div class="apple-pods-pros ta_center">
         <h1>
-            A magical connection to <br> your devices.
+            A magical connection to <br />
+            your devices.
         </h1>
         <div class="section-connection">
-           <div class="tile-connection">
-             
-           </div>
-           <div class="tile-connection">
-
-           </div>
-           <div class="tile-connection">
-
-           </div>
+            <div class="tile-connection">
+                <div class="img">
+                    <img src="./assets/tile_1.jpeg" alt="" />
+                </div>
+            </div>
+            <div class="tile-connection">
+                <div class="img">
+                    <img src="./assets/tile_2.jpeg" alt="" />
+                </div>
+            </div>
+            <div class="tile-connection">
+                <div class="img">
+                    <img src="./assets/tile_3.jpeg" alt="" />
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -224,14 +231,26 @@ import airpods3 from "./components/airpods3.vue";
         }
     }
 }
-.apple-pods-pros{
+.apple-pods-pros {
     padding: 7rem 0px;
-    h1{
-            font-size: 62px;
-            color: $black-txt;
-            font-weight: 700;
-            line-height: 4rem;
+    @include flexcol(3rem);
+    h1 {
+        font-size: 62px;
+        color: $black-txt;
+        font-weight: 700;
+        line-height: 4rem;
     }
-    
+    .section-connection {
+        @include flex(center, center, 0 2em);
+        .tile-connection {
+            width: 27%;
+            border-radius: 25px;
+            background: white;
+            height: 484px;
+            img {
+                width: 95%;
+            }
+        }
+    }
 }
 </style>
