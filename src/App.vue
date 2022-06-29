@@ -100,15 +100,24 @@ import airpods3 from "./components/airpods3.vue";
                 <div class="img">
                     <img src="./assets/tile_1.jpeg" alt="" />
                 </div>
+                <div class="tile-header">
+                    <h3>One-tap setup</h3>
+                </div>
             </div>
             <div class="tile-connection">
                 <div class="img">
                     <img src="./assets/tile_2.jpeg" alt="" />
                 </div>
+                <div class="tile-header">
+                 <h3>One-tap setup</h3>
+                </div>
             </div>
             <div class="tile-connection">
                 <div class="img">
                     <img src="./assets/tile_3.jpeg" alt="" />
+                </div>
+                <div class="tile-header">
+ <h3>Audio Sharing</h3>
                 </div>
             </div>
         </div>
@@ -241,15 +250,31 @@ import airpods3 from "./components/airpods3.vue";
         line-height: 4rem;
     }
     .section-connection {
-        @include flex(center, center, 0 2em);
+        @include flex(center, center, 0 1.5em);
         .tile-connection {
             width: 27%;
             border-radius: 25px;
             background: white;
             height: 484px;
-            img {
-                width: 95%;
+             @include flex(center, center,0 );
+             &:nth-child(1){
+                display: block;
+                .img{
+                     margin-left: 20px !important;
+                }
             }
+           .img{
+            width: 90%;
+             img {
+                width: 100%;
+            }
+           }
+           .tile-header{
+            display: none;
+            h3{
+                font-size: 2em;
+            }
+           }
         }
     }
 }
