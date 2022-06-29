@@ -1,8 +1,9 @@
 <template>
     <div class="video_block airpods-3">
-        <video id="myVid" loop autoplay muted>
+        <video id="myVid" poster="../assets/airpods_pro_right_2x.png" loop autoplay muted>
             <source
                 type="video/mp4"
+                
                 src="https://www.apple.com/105/media/us/airpods/2021/625e09e3-e26e-49ed-a5ee-6e4eda5d275f/anim/supercut/large_2x.mp4"
             />
         </video>
@@ -34,6 +35,7 @@ onMounted(() => {
 .video_block {
     width: 100%;
     position: relative;
+    min-height: 680px;
     border-radius: 2rem;
     video {
         width: 100%;

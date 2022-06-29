@@ -90,6 +90,22 @@ import airpods3 from "./components/airpods3.vue";
             </div>
         </div>
     </div>
+    <div class="apple-pods-pros ta_center">
+        <h1>
+            A magical connection to <br> your devices.
+        </h1>
+        <div class="section-connection">
+           <div class="tile-connection">
+             
+           </div>
+           <div class="tile-connection">
+
+           </div>
+           <div class="tile-connection">
+
+           </div>
+        </div>
+    </div>
 </template>
 
 <style lang="scss">
@@ -207,5 +223,15 @@ import airpods3 from "./components/airpods3.vue";
             }
         }
     }
+}
+.apple-pods-pros{
+    padding: 7rem 0px;
+    h1{
+            font-size: 62px;
+            color: $black-txt;
+            font-weight: 700;
+            line-height: 4rem;
+    }
+    
 }
 </style>
