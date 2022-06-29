@@ -1,11 +1,11 @@
 <template>
     <div class="video_block airpods-3">
-        <video
-            id="myVid"
-            loop
-            autoplay
-            src="https://www.apple.com/105/media/us/airpods/2021/625e09e3-e26e-49ed-a5ee-6e4eda5d275f/anim/supercut/large_2x.mp4"
-        ></video>
+        <video id="myVid" loop autoplay muted>
+            <source
+                type="video/mp4"
+                src="https://www.apple.com/105/media/us/airpods/2021/625e09e3-e26e-49ed-a5ee-6e4eda5d275f/anim/supercut/large_2x.mp4"
+            />
+        </video>
         <div class="txt_content abs ta_center">
             <div class="airpod-gen">
                 <div class="label-new">New</div>
