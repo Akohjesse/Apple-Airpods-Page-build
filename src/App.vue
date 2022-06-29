@@ -71,13 +71,13 @@ import airpods3 from "./components/airpods3.vue";
         <div class="airpods-2 airpods-item">
             <div class="image-backdrop">
                 <div class="img">
-                    <img src="./assets/airpods_2_left_large.png" alt="">
+                    <img src="./assets/airpods_2_left_large.png" alt="" />
                 </div>
                 <div class="img">
-                    <img src="./assets/airpods_2_right.png" alt="">
+                    <img src="./assets/airpods_2_right.png" alt="" />
                 </div>
             </div>
-            <div class="txt_content abs ta_center">
+            <div class="txt_content ta_center">
                 <div class="airpod-gen">
                     <h1>AirPods</h1>
                     <br />
@@ -167,10 +167,34 @@ import airpods3 from "./components/airpods3.vue";
     }
     .airpods-2 {
         background: white;
+        overflow: hidden;
+        min-height: 680px;
+        .image-backdrop {
+            @include flex(center, center, 0em 8rem);
+            position: absolute;
+            z-index: 0;
+            .img {
+                position: relative;
+                &:nth-child(1) {
+                    width: 26%;
+                    top: 0rem;
+                }
+                &:nth-child(2) {
+                    top: 15rem;
+                    width: 24%;
+                }
+                img {
+                    width: 100%;
+                }
+            }
+        }
         .txt_content {
-            top: 37%;
-            left: 28%;
-            @include flexcol(8rem 0);
+            z-index: 14;
+            position: relative;
+            top: 200px;
+            @include flexcol(10rem 0);
+            align-items: center;
+            justify-content: center;
             h1 {
                 @include txtheader($black-txt);
                 letter-spacing: -0.0018em;
