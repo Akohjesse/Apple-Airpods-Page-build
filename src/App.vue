@@ -1,6 +1,51 @@
 <script setup>
 import Header from "./components/header.vue";
 import airpods3 from "./components/airpods3.vue";
+import LocomotiveScroll from "locomotive-scroll";
+import { onMounted } from "@vue/runtime-core";
+import gsap from "gsap";
+import ScrollTrigger from "gsap/ScrollTrigger";
+gsap.registerPlugin(ScrollTrigger);
+onMounted(() => {
+    const scroll = new LocomotiveScroll({
+        el: document.querySelector("#app"),
+        smooth: true,
+    });
+
+    setTimeout(() => {
+        scroll.update();
+    }, 1000);
+
+    scroll.on("scroll", ScrollTrigger.update);
+
+    // gsap.timeline({
+    //     scrollTrigger: {
+    //         trigger: '.airpods-max',
+    //         start: "center center",
+    //         scrub: 1,
+    //         markers:true,
+    //         toggleActions: "play reset none restart",
+    //         end: "center +=200",
+    //     },
+    // }).to('.airpods-pro', {
+
+    // });
+
+    ScrollTrigger.scrollerProxy(scroll.el, {
+        scrollTop(value) {
+            return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
+        },
+
+        getBoundingClientRect() {
+            return {
+                top: 0,
+                left: 0,
+                width: window.innerWidth,
+                height: window.innerHeight,
+            };
+        },
+    });
+});
 </script>
 
 <template>
@@ -38,9 +83,9 @@ import airpods3 from "./components/airpods3.vue";
             <span>Apple Music</span>
         </div>
     </div>
-    <div class="child_wrap airpods-section">
+    <div class="child_wrap airpods-section" id="fixed">
         <airpods-3 />
-        <div class="airpods-pro airpods-item">
+        <div id="enlarge-container" class="airpods-pro airpods-item">
             <div class="image-backdrop">
                 <div class="img">
                     <img src="./assets/airpods_pro_left_large.png" alt="" />
@@ -60,7 +105,7 @@ import airpods3 from "./components/airpods3.vue";
         <div class="airpods-max airpods-item">
             <div>
                 <div class="img">
-                    <img src="./assets/airpods_max_large_2x.png" alt="" />
+                    <img data-scroll data-scroll-speed="1" src="./assets/airpods_max_large_2x.png" alt="" />
                 </div>
                 <div class="purchase-gen ta_center">
                     <div class="label col-white">Buy</div>
@@ -121,22 +166,22 @@ import airpods3 from "./components/airpods3.vue";
         <div class="compare-section">
             <div>
                 <div class="img">
-                    <img src="./assets/a2.png" alt="">
+                    <img data-scroll-speed="10" data-scroll data-scroll-direction="horizontal" src="./assets/a2.png" alt="" />
                 </div>
             </div>
             <div>
                 <div class="img">
-                    <img src="./assets/a3.png" alt="">
+                    <img data-scroll-speed="-10" data-scroll data-scroll-direction="horizontal" src="./assets/a3.png" alt="" />
                 </div>
             </div>
             <div>
                 <div class="img">
-                    <img src="./assets/ap.png" alt="">
+                    <img data-scroll-speed="10" data-scroll data-scroll-direction="horizontal" src="./assets/ap.png" alt="" />
                 </div>
             </div>
             <div>
                 <div class="img">
-                    <img src="./assets/am.png" alt="">
+                    <img data-scroll-speed="-10" data-scroll data-scroll-direction="horizontal" src="./assets/am.png" alt="" />
                 </div>
             </div>
         </div>

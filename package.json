@@ -8,6 +8,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "gsap": "^3.10.4",
+    "locomotive-scroll": "^4.1.4",
     "prettier": "^2.7.1",
     "vue": "^3.2.25"
   },
