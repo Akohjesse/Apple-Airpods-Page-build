@@ -3,191 +3,159 @@ import Header from "./components/header.vue";
 import airpods3 from "./components/airpods3.vue";
 import LocomotiveScroll from "locomotive-scroll";
 import { onMounted } from "@vue/runtime-core";
-import gsap from "gsap";
-import ScrollTrigger from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
     const scroll = new LocomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true,
+        lerp: 0.09,
     });
 
     setTimeout(() => {
         scroll.update();
     }, 1000);
-
-    scroll.on("scroll", ScrollTrigger.update);
-
-    // gsap.timeline({
-    //     scrollTrigger: {
-    //         trigger: '.airpods-max',
-    //         start: "center center",
-    //         scrub: 1,
-    //         markers:true,
-    //         toggleActions: "play reset none restart",
-    //         end: "center +=200",
-    //     },
-    // }).to('.airpods-pro', {
-
-    // });
-
-    ScrollTrigger.scrollerProxy(scroll.el, {
-        scrollTop(value) {
-            return arguments.length ? scroll.scrollTo(value, 0, 0) : scroll.scroll.instance.scroll.y;
-        },
-
-        getBoundingClientRect() {
-            return {
-                top: 0,
-                left: 0,
-                width: window.innerWidth,
-                height: window.innerHeight,
-            };
-        },
-    });
 });
 </script>
 
 <template>
-  <div data-scroll-container class="c-section">
-      <Header />
-    <div class="chapternav">
-        <div class="items">
-            <img src="./assets/airpods2.svg" alt="" />
-            <span
-                >AirPods <br />
-                2nd Generation</span
-            >
+    <div data-scroll-container class="c-section">
+        <Header />
+        <div class="chapternav">
+            <div class="items">
+                <img src="./assets/airpods2.svg" alt="" />
+                <span
+                    >AirPods <br />
+                    2nd Generation</span
+                >
+            </div>
+            <div class="items">
+                <img src="./assets/airpods3.svg" alt="" />
+                <span
+                    >AirPods <br />
+                    3rd Generation <br
+                /></span>
+                <span class="new">New</span>
+            </div>
+            <div class="items">
+                <img src="./assets/airpodspro.svg" alt="" />
+                <span>AirPods Pro</span>
+            </div>
+            <div class="items">
+                <img src="./assets/airpodsmax.svg" alt="" />
+                <span>AirPods Max</span>
+            </div>
+            <div class="items">
+                <img src="./assets/compare_light.svg" alt="" />
+                <span>Compare</span>
+            </div>
+            <div class="items">
+                <img src="./assets/apple_music_light.svg" alt="" />
+                <span>Apple Music</span>
+            </div>
         </div>
-        <div class="items">
-            <img src="./assets/airpods3.svg" alt="" />
-            <span
-                >AirPods <br />
-                3rd Generation <br
-            /></span>
-            <span class="new">New</span>
+        <div class="child_wrap airpods-section" id="fixed">
+            <airpods-3 />
+            <div class="airpods-pro airpods-item">
+                <div class="image-backdrop">
+                    <div class="img">
+                        <img data-scroll data-scroll-speed="1" src="./assets/airpods_pro_left_large.png" alt="" />
+                    </div>
+                    <div class="img">
+                        <img data-scroll data-scroll-speed="-0.5" src="./assets/airpods_pro_right_2x.png" alt="" />
+                    </div>
+                </div>
+                <div class="txt_content ta_center abs">
+                    <h1>AirPods Pro</h1>
+                    <div class="purchase-gen">
+                        <div class="label">Buy</div>
+                        <p class="col-white">Learn more</p>
+                    </div>
+                </div>
+            </div>
+            <div class="airpods-max airpods-item">
+                <div>
+                    <div class="img">
+                        <img data-scroll data-scroll-speed="1.5" data-scroll-delay="1" src="./assets/airpods_max_large_2x.png" alt="" />
+                    </div>
+                    <div class="purchase-gen ta_center">
+                        <div class="label col-white">Buy</div>
+                        <p class="col-blue">Learn more</p>
+                    </div>
+                </div>
+            </div>
+            <div class="airpods-2 airpods-item">
+                <div class="image-backdrop" data-scroll data-scroll-speed="1">
+                    <div class="img">
+                        <img src="./assets/airpods_2_left_large.png" alt="" />
+                    </div>
+                    <div class="img">
+                        <img src="./assets/airpods_2_right.png" alt="" />
+                    </div>
+                </div>
+                <div class="txt_content ta_center">
+                    <div class="airpod-gen">
+                        <h1>AirPods</h1>
+                        <br />
+                        <p class="subhead">2nd generation</p>
+                    </div>
+                    <div class="purchase-gen">
+                        <div class="label col-white">Buy</div>
+                        <p class="col-blue">Learn more</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="items">
-            <img src="./assets/airpodspro.svg" alt="" />
-            <span>AirPods Pro</span>
+        <div class="apple-pods-pros ta_center">
+            <h1 class="header-sub">
+                A magical connection to <br />
+                your devices.
+            </h1>
+            <div class="section-connection">
+                <div class="tile-connection">
+                    <div class="img">
+                        <img src="./assets/tile_1.jpeg" alt="" />
+                    </div>
+                </div>
+                <div class="tile-connection">
+                    <div class="img">
+                        <img src="./assets/tile_2.jpeg" alt="" />
+                    </div>
+                </div>
+                <div class="tile-connection">
+                    <div class="img">
+                        <img src="./assets/tile_3.jpeg" alt="" />
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="items">
-            <img src="./assets/airpodsmax.svg" alt="" />
-            <span>AirPods Max</span>
-        </div>
-        <div class="items">
-            <img src="./assets/compare_light.svg" alt="" />
-            <span>Compare</span>
-        </div>
-        <div class="items">
-            <img src="./assets/apple_music_light.svg" alt="" />
-            <span>Apple Music</span>
+        <div class="apple-pods-compare ta_center">
+            <h1 class="header-sub">
+                Which AirPods are <br />
+                right for you?
+            </h1>
+            <div class="compare-section">
+                <div>
+                    <div class="img">
+                        <img data-scroll-speed="10" data-scroll data-scroll-direction="horizontal" src="./assets/a2.png" alt="" />
+                    </div>
+                </div>
+                <div>
+                    <div class="img">
+                        <img data-scroll-speed="-10" data-scroll data-scroll-direction="horizontal" src="./assets/a3.png" alt="" />
+                    </div>
+                </div>
+                <div>
+                    <div class="img">
+                        <img data-scroll-speed="10" data-scroll data-scroll-direction="horizontal" src="./assets/ap.png" alt="" />
+                    </div>
+                </div>
+                <div>
+                    <div class="img">
+                        <img data-scroll-speed="-10" data-scroll data-scroll-direction="horizontal" src="./assets/am.png" alt="" />
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="child_wrap airpods-section" id="fixed">
-        <airpods-3 />
-        <div id="enlarge-container" class="airpods-pro airpods-item">
-            <div class="image-backdrop">
-                <div class="img">
-                    <img  data-scroll data-scroll-speed="1" src="./assets/airpods_pro_left_large.png" alt="" />
-                </div>
-                <div class="img">
-                    <img  data-scroll data-scroll-speed="-1" src="./assets/airpods_pro_right_2x.png" alt="" />
-                </div>
-            </div>
-            <div class="txt_content ta_center abs">
-                <h1>AirPods Pro</h1>
-                <div class="purchase-gen">
-                    <div class="label">Buy</div>
-                    <p class="col-white">Learn more</p>
-                </div>
-            </div>
-        </div>
-        <div class="airpods-max airpods-item">
-            <div>
-                <div class="img">
-                    <img data-scroll data-scroll-speed="1" src="./assets/airpods_max_large_2x.png" alt="" />
-                </div>
-                <div class="purchase-gen ta_center">
-                    <div class="label col-white">Buy</div>
-                    <p class="col-blue">Learn more</p>
-                </div>
-            </div>
-        </div>
-        <div class="airpods-2 airpods-item">
-            <div class="image-backdrop" data-scroll data-scroll-speed="1">
-                <div class="img">
-                    <img src="./assets/airpods_2_left_large.png" alt="" />
-                </div>
-                <div class="img">
-                    <img src="./assets/airpods_2_right.png" alt="" />
-                </div>
-            </div>
-            <div class="txt_content ta_center">
-                <div class="airpod-gen">
-                    <h1>AirPods</h1>
-                    <br />
-                    <p class="subhead">2nd generation</p>
-                </div>
-                <div class="purchase-gen">
-                    <div class="label col-white">Buy</div>
-                    <p class="col-blue">Learn more</p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="apple-pods-pros ta_center">
-        <h1 class="header-sub">
-            A magical connection to <br />
-            your devices.
-        </h1>
-        <div class="section-connection">
-            <div class="tile-connection">
-                <div class="img">
-                    <img src="./assets/tile_1.jpeg" alt="" />
-                </div>
-            </div>
-            <div class="tile-connection">
-                <div class="img">
-                    <img src="./assets/tile_2.jpeg" alt="" />
-                </div>
-            </div>
-            <div class="tile-connection">
-                <div class="img">
-                    <img src="./assets/tile_3.jpeg" alt="" />
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="apple-pods-compare ta_center">
-        <h1 class="header-sub">
-            Which AirPods are <br />
-            right for you?
-        </h1>
-        <div class="compare-section">
-            <div>
-                <div class="img">
-                    <img data-scroll-speed="10" data-scroll data-scroll-direction="horizontal" src="./assets/a2.png" alt="" />
-                </div>
-            </div>
-            <div>
-                <div class="img">
-                    <img data-scroll-speed="-10" data-scroll data-scroll-direction="horizontal" src="./assets/a3.png" alt="" />
-                </div>
-            </div>
-            <div>
-                <div class="img">
-                    <img data-scroll-speed="10" data-scroll data-scroll-direction="horizontal" src="./assets/ap.png" alt="" />
-                </div>
-            </div>
-            <div>
-                <div class="img">
-                    <img data-scroll-speed="-10" data-scroll data-scroll-direction="horizontal" src="./assets/am.png" alt="" />
-                </div>
-            </div>
-        </div>
-    </div>
-  </div>
 </template>
 
 <style lang="scss">

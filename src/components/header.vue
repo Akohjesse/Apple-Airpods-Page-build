@@ -24,7 +24,7 @@ export default {};
 <style lang="scss" scoped>
 header {
     background: #313132;
-      position: relative;
+    position: relative;
     nav {
         width: 68%;
         margin: 0 auto;
