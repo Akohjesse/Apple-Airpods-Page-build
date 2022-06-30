@@ -86,7 +86,7 @@ onMounted(() => {
     <div class="child_wrap airpods-section" id="fixed">
         <airpods-3 />
         <div id="enlarge-container" class="airpods-pro airpods-item">
-            <div class="image-backdrop">
+            <div data-scroll data-scroll-speed="2" class="image-backdrop">
                 <div class="img">
                     <img src="./assets/airpods_pro_left_large.png" alt="" />
                 </div>
@@ -114,7 +114,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="airpods-2 airpods-item">
-            <div class="image-backdrop">
+            <div class="image-backdrop" data-scroll data-scroll-speed="2">
                 <div class="img">
                     <img src="./assets/airpods_2_left_large.png" alt="" />
                 </div>
