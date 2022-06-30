@@ -86,12 +86,12 @@ onMounted(() => {
     <div class="child_wrap airpods-section" id="fixed">
         <airpods-3 />
         <div id="enlarge-container" class="airpods-pro airpods-item">
-            <div data-scroll data-scroll-speed="2" class="image-backdrop">
+            <div class="image-backdrop">
                 <div class="img">
-                    <img src="./assets/airpods_pro_left_large.png" alt="" />
+                    <img  data-scroll data-scroll-speed="1" src="./assets/airpods_pro_left_large.png" alt="" />
                 </div>
                 <div class="img">
-                    <img src="./assets/airpods_pro_right_2x.png" alt="" />
+                    <img  data-scroll data-scroll-speed="-1" src="./assets/airpods_pro_right_2x.png" alt="" />
                 </div>
             </div>
             <div class="txt_content ta_center abs">
@@ -114,7 +114,7 @@ onMounted(() => {
             </div>
         </div>
         <div class="airpods-2 airpods-item">
-            <div class="image-backdrop" data-scroll data-scroll-speed="2">
+            <div class="image-backdrop" data-scroll data-scroll-speed="1">
                 <div class="img">
                     <img src="./assets/airpods_2_left_large.png" alt="" />
                 </div>
@@ -214,6 +214,7 @@ onMounted(() => {
         background: black;
         width: 100%;
         .image-backdrop {
+            z-index: 3;
             @include flex(center, center, 0 3.5rem);
             .img {
                 width: 31%;
@@ -239,6 +240,7 @@ onMounted(() => {
         }
     }
     .airpods-max {
+        z-index: 2;
         background: white;
         background-image: url("./assets/airpods_max_logo_2x.jpeg");
         background-repeat: no-repeat;
