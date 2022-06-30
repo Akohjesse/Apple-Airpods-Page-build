@@ -8,7 +8,7 @@ import ScrollTrigger from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 onMounted(() => {
     const scroll = new LocomotiveScroll({
-        el: document.querySelector("#app"),
+        el: document.querySelector("[data-scroll-container]"),
         smooth: true,
     });
 
@@ -49,7 +49,8 @@ onMounted(() => {
 </script>
 
 <template>
-    <Header />
+  <div data-scroll-container class="c-section">
+      <Header />
     <div class="chapternav">
         <div class="items">
             <img src="./assets/airpods2.svg" alt="" />
@@ -186,6 +187,7 @@ onMounted(() => {
             </div>
         </div>
     </div>
+  </div>
 </template>
 
 <style lang="scss">
