@@ -2,17 +2,27 @@
 import Header from "./components/header.vue";
 import airpods3 from "./components/airpods3.vue";
 import LocomotiveScroll from "locomotive-scroll";
-import { onMounted } from "@vue/runtime-core";
+import { onMounted, ref } from "@vue/runtime-core";
+const pod = ref("2");
 onMounted(() => {
     const scroll = new LocomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true,
         lerp: 0.02,
     });
+    
 
     setTimeout(() => {
         scroll.update();
     }, 1000);
+
+    const changepodName=(name)=>{
+      pod.value = name
+    }
+
+    scroll.on('call', func=>{
+        changepodName(func)
+    })
 });
 </script>
 
@@ -133,8 +143,8 @@ onMounted(() => {
                 right for you?
             </h1>
             <div class="compare-section">
-                <div>
-                    <div data-scroll-speed="9" data-scroll data-scroll-direction="horizontal" class="img">
+                <div data-scroll data-scroll-call="2" data-scroll-speed="9" data-scroll-direction="horizontal">
+                    <div  class="img">
                         <img src="./assets/a2.png" alt="" />
                     </div>
                     <div class="txt_content">
@@ -147,11 +157,8 @@ onMounted(() => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" class="img">
-                        <img src="./assets/a3.png" alt="" />
-                    </div>
-                    <div class="txt_content">
+                <div data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" data-scroll-call="3" >
+                   <div class="txt_content">
                         <h2>AirPods</h2>
                         
                         <p class="subhead">3rd generation</p>
@@ -161,9 +168,13 @@ onMounted(() => {
                             <p class="col-blue">Learn more</p>
                         </div>
                     </div>
+                    <div  class="img">
+                        <img src="./assets/a3.png" alt="" />
+                    </div>
+                    
                 </div>
-                <div>
-                    <div data-scroll-speed="9" data-scroll data-scroll-direction="horizontal" class="img">
+                <div data-scroll-speed="9" data-scroll data-scroll-direction="horizontal" data-scroll-call="Pro">
+                    <div  class="img">
                         <img  src="./assets/ap.png" alt="" />
                     </div>
                     <div class="txt_content">
@@ -175,11 +186,8 @@ onMounted(() => {
                         </div>
                     </div>
                 </div>
-                <div>
-                    <div  data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" class="img">
-                        <img  src="./assets/am.png" alt="" />
-                    </div>
-                    <div class="txt_content">
+                <div  data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" data-scroll-call="Max">
+                   <div class="txt_content">
                         <h2>AirPods Max</h2>
                         <br>
                         <div class="purchase-gen">
@@ -187,10 +195,14 @@ onMounted(() => {
                             <p class="col-blue">Learn more</p>
                         </div>
                     </div>
+                    <div   class="img">
+                        <img  src="./assets/am.png" alt="" />
+                    </div>
+                    
                 </div>
             </div>
             <div data-scroll-sticky data-scroll data-scroll-target=".apple-pods-compare"  class="trial">
-                <h1  data-scroll-speed="-2" data-scroll>AirPods 2</h1>
+                <h1  data-scroll-speed="-1" data-scroll>AirPods {{pod}}</h1>
             </div>
         </div>
         <br />
@@ -349,16 +361,19 @@ onMounted(() => {
         position: absolute;
         top: 10%;
         z-index: -10;
+        text-align: center;
+        left: 10%;
         h1{
             font-size: 12em;
             color: white;
-             text-shadow: 0 2px 50px rgb(221 221 221);
+           text-shadow: 0 2px 20px rgb(235, 235, 235);
+            // text-shadow: -10px 7px 0px #d3d3d4;
         }
     }
     .compare-section {
         @include flexcol(5rem);
         > div {
-            @include flexcol(3.5rem);
+            @include flex(center, center, 0 5rem);
            .txt_content{
              h2 {
                 color: $black-txt;
