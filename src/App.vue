@@ -154,7 +154,7 @@ onMounted(() => {
                 right for you?
             </h1>
             <div class="compare-section">
-                <div data-scroll data-scroll-call="2" data-scroll-speed="5" data-scroll-direction="horizontal">
+                <div data-scroll data-scroll-call="2" data-scroll-speed="9" data-scroll-direction="horizontal">
                     <div class="img">
                         <img src="./assets/a2.png" alt="" />
                     </div>
