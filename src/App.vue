@@ -7,7 +7,7 @@ onMounted(() => {
     const scroll = new LocomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true,
-        lerp: 0.09,
+        lerp: 0.02,
     });
 
     setTimeout(() => {
@@ -74,7 +74,7 @@ onMounted(() => {
             <div class="airpods-max airpods-item">
                 <div>
                     <div class="img">
-                        <img data-scroll data-scroll-speed="1.5" data-scroll-delay="1" src="./assets/airpods_max_large_2x.png" alt="" />
+                        <img data-scroll data-scroll-speed="2" data-scroll-delay="1" src="./assets/airpods_max_large_2x.png" alt="" />
                     </div>
                     <div class="purchase-gen ta_center">
                         <div class="label col-white">Buy</div>
@@ -135,26 +135,39 @@ onMounted(() => {
             <div class="compare-section">
                 <div>
                     <div class="img">
-                        <img data-scroll-speed="10" data-scroll data-scroll-direction="horizontal" src="./assets/a2.png" alt="" />
+                        <img data-scroll-speed="9" data-scroll data-scroll-direction="horizontal" src="./assets/a2.png" alt="" />
+                    </div>
+                    <div class="txt_content">
+                        <h2>AirPods</h2>
+                        <br />
+                        <p class="subhead">2nd generation</p>
                     </div>
                 </div>
                 <div>
                     <div class="img">
-                        <img data-scroll-speed="-10" data-scroll data-scroll-direction="horizontal" src="./assets/a3.png" alt="" />
+                        <img data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" src="./assets/a3.png" alt="" />
+                    </div>
+                    <div class="txt_content">
+                        <h2>AirPods</h2>
+                        <br />
+                        <p class="subhead">3rd generation</p>
                     </div>
                 </div>
                 <div>
                     <div class="img">
-                        <img data-scroll-speed="10" data-scroll data-scroll-direction="horizontal" src="./assets/ap.png" alt="" />
+                        <img data-scroll-speed="9" data-scroll data-scroll-direction="horizontal" src="./assets/ap.png" alt="" />
                     </div>
+                    <h2>AirPods Pro</h2>
                 </div>
                 <div>
                     <div class="img">
-                        <img data-scroll-speed="-10" data-scroll data-scroll-direction="horizontal" src="./assets/am.png" alt="" />
+                        <img data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" src="./assets/am.png" alt="" />
                     </div>
+                    <h2>AirPods Max</h2>
                 </div>
             </div>
         </div>
+        <br />
     </div>
 </template>
 
@@ -304,6 +317,16 @@ onMounted(() => {
 }
 .apple-pods-compare {
     padding: 7rem 0px;
-    @include flexcol(4rem);
+    @include flexcol(7rem);
+    .compare-section {
+        @include flexcol(5rem);
+        > div {
+            @include flexcol(3.5rem);
+            h2 {
+                color: $black-txt;
+                font-size: 3em;
+            }
+        }
+    }
 }
 </style>
