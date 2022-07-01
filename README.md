@@ -1,6 +1,6 @@
 # Apple AirPods Page Clone
 
- This is an attempt in rebuilding Apples airpods page, adding extra animations using [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/) and [Gsap](https://greensocks.com)
+ This is an attempt in rebuilding Apples airpods page, adding extra animations using [Locomotive Scroll](https://locomotivemtl.github.io/locomotive-scroll/)
 
 
 # Vue 3 + Vite
