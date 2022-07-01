@@ -4,7 +4,19 @@ import airpods3 from "./components/airpods3.vue";
 import LocomotiveScroll from "locomotive-scroll";
 import { onMounted, ref } from "@vue/runtime-core";
 const pod = ref(null);
+const nullresponsive = ref(false);
+window.addEventListener("resize", () => {
+    if (window.innerWidth <= 900) {
+        nullresponsive.value = true;
+    }
+    else{
+         nullresponsive.value = false;
+    }
+});
 onMounted(() => {
+    if (window.innerWidth <= 900) {
+        nullresponsive.value = true;
+    }
     const scroll = new LocomotiveScroll({
         el: document.querySelector("[data-scroll-container]"),
         smooth: true,
@@ -15,12 +27,7 @@ onMounted(() => {
         scroll.update();
     }, 1000);
 
-    const changepodName = (name) => {
-        pod.value = name;
-    };
-
-    scroll.on("call", (func) => {
-        changepodName(func);
+    scroll.on("call", () => {
         setTimeout(() => {
             let namesArray = [2, 3, "Pro", "Max"];
             let i = 0;
@@ -32,12 +39,21 @@ onMounted(() => {
                     i = 0;
                 }
             }, 1500);
-        }, 3000);
+        }, 1000);
     });
 });
 </script>
 
 <template>
+    <div v-if="nullresponsive" class="tired">
+        <div class="img">
+            <img src="./assets/tired.jpeg" alt="" />
+        </div>
+        <h2>
+            Nothing dey here boss, if you want to help me make this responsive🙏🏽, fork this
+            <a style="color: white" href="https://github.com/Akohjesse/Apple-Airpods-Page-Clone">repo</a>
+        </h2>
+    </div>
     <div data-scroll-container class="c-section">
         <Header />
         <div class="chapternav">
@@ -219,6 +235,30 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
+.tired {
+    position: fixed;
+    height: 100vh;
+    z-index: 990;
+    @include flex(center, center, 0);
+    @include flexcol(2rem);
+    background-color: black;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    .img {
+        width: 60%;
+        margin: 0 auto;
+        img {
+            width: 100%;
+        }
+    }
+    h2 {
+        color: white;
+        padding: 0 20px;
+        font-size: 2em;
+    }
+}
 .chapternav {
     text-align: center;
     padding: 8px 0px;
