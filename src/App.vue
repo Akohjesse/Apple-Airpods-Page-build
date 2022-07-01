@@ -128,43 +128,69 @@ onMounted(() => {
             </div>
         </div>
         <div class="apple-pods-compare ta_center">
-            <h1 class="header-sub">
+            <h1  class="header-sub">
                 Which AirPods are <br />
                 right for you?
             </h1>
             <div class="compare-section">
                 <div>
-                    <div class="img">
-                        <img data-scroll-speed="9" data-scroll data-scroll-direction="horizontal" src="./assets/a2.png" alt="" />
+                    <div data-scroll-speed="9" data-scroll data-scroll-direction="horizontal" class="img">
+                        <img src="./assets/a2.png" alt="" />
                     </div>
                     <div class="txt_content">
                         <h2>AirPods</h2>
-                        <br />
                         <p class="subhead">2nd generation</p>
+                          <br />
+                        <div class="purchase-gen">
+                            <div class="label col-white">Buy</div>
+                            <p class="col-blue">Learn more</p>
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <div class="img">
-                        <img data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" src="./assets/a3.png" alt="" />
+                    <div data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" class="img">
+                        <img src="./assets/a3.png" alt="" />
                     </div>
                     <div class="txt_content">
                         <h2>AirPods</h2>
-                        <br />
+                        
                         <p class="subhead">3rd generation</p>
+                        <br />
+                        <div class="purchase-gen">
+                            <div class="label col-white">Buy</div>
+                            <p class="col-blue">Learn more</p>
+                        </div>
                     </div>
                 </div>
                 <div>
-                    <div class="img">
-                        <img data-scroll-speed="9" data-scroll data-scroll-direction="horizontal" src="./assets/ap.png" alt="" />
+                    <div data-scroll-speed="9" data-scroll data-scroll-direction="horizontal" class="img">
+                        <img  src="./assets/ap.png" alt="" />
                     </div>
-                    <h2>AirPods Pro</h2>
+                    <div class="txt_content">
+                        <h2>AirPods Pro</h2>
+                        <br>
+                        <div class="purchase-gen">
+                            <div class="label col-white">Buy</div>
+                            <p class="col-blue">Learn more</p>
+                        </div>
+                    </div>
                 </div>
                 <div>
-                    <div class="img">
-                        <img data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" src="./assets/am.png" alt="" />
+                    <div  data-scroll-speed="-9" data-scroll data-scroll-direction="horizontal" class="img">
+                        <img  src="./assets/am.png" alt="" />
                     </div>
-                    <h2>AirPods Max</h2>
+                    <div class="txt_content">
+                        <h2>AirPods Max</h2>
+                        <br>
+                        <div class="purchase-gen">
+                            <div class="label col-white">Buy</div>
+                            <p class="col-blue">Learn more</p>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div data-scroll-sticky data-scroll data-scroll-target=".apple-pods-compare"  class="trial">
+                <h1  data-scroll-speed="-2" data-scroll>AirPods 2</h1>
             </div>
         </div>
         <br />
@@ -317,15 +343,36 @@ onMounted(() => {
 }
 .apple-pods-compare {
     padding: 7rem 0px;
+    position: relative;
     @include flexcol(7rem);
+    .trial{
+        position: absolute;
+        top: 10%;
+        z-index: -10;
+        h1{
+            font-size: 12em;
+            color: white;
+             text-shadow: 0 2px 50px rgb(221 221 221);
+        }
+    }
     .compare-section {
         @include flexcol(5rem);
         > div {
             @include flexcol(3.5rem);
-            h2 {
+           .txt_content{
+             h2 {
                 color: $black-txt;
                 font-size: 3em;
             }
+            p{
+                font-size: 1em;
+            }
+            .label {
+                @include label_btn() {
+                    background: $blue;
+                }
+            }
+           }
         }
     }
 }
