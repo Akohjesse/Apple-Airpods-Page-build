@@ -216,9 +216,6 @@ onMounted(() => {
 </template>
 
 <style lang="scss">
-html{
-    font-size: calc(16px + 6 * ((100vw - 320px) / 680));
-}
 .chapternav {
     text-align: center;
     padding: 8px 0px;
