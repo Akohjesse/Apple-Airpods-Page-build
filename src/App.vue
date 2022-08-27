@@ -14,7 +14,7 @@ onMounted(() => {
 
     setTimeout(() => {
         scroll.update();
-    }, 1000);
+    }, 500);
 
     scroll.on("call", () => {
         setTimeout(() => {
